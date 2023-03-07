@@ -1,0 +1,68 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>上传表格</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <form action="/process" method="post" enctype="multipart/form-data">-->
+<!--        <input type="file" name="file1" required><br><br>-->
+<!--        <input type="file" name="file2" required><br><br>-->
+<!--        <input type="submit" value="上传并处理">-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>数据分析和可视化</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+        }
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+        }
+        form {
+            margin: 20px;
+            text-align: center;
+        }
+        input[type="file"] {
+            display: block;
+            margin: 10px auto;
+        }
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>XX学院同学培养方案完成情况分析</h1>
+<!--    < action="/process" method="post" enctype="multipart/form-data">-->
+
+<!--        <input type="file" name="file1" value="请在此处上传该同学培养方案" required><br><br>-->
+<!--        <input type="file" name="file2" value="请在此处上传该同学成绩情况" required><br><br>-->
+<!--        <input type="submit" value="上传并分析">-->
+<!--    </form>-->
+    <form action="/process" method="post" enctype="multipart/form-data">
+        <input type="file" name="file1" value="请在此处上传该同学培养方案" required><br><br>
+        <input type="file" name="file2" required><br><br>
+        <input type="submit" value="上传并处理">
+    </form>
+</body>
+</html>

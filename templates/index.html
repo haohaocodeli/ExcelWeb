@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tables</title>
+    <style>
+      table.data {
+        border-collapse: collapse;
+        margin: 0 auto;
+        font-size: 0.9em;
+        min-width: 400px;
+        width: 100%;
+        text-align: center;
+      }
+
+      table.data thead tr {
+        background-color: #7ea8e3;
+        color: #fff;
+        text-align: center;
+      }
+
+      table.data th,
+      table.data td {
+        padding: 12px 15px;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+
+      table.data tbody tr {
+        border-bottom: 1px solid #ddd;
+      }
+
+      table.data tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+      }
+
+      table.data tbody tr:last-of-type {
+        border-bottom: 2px solid #7ea8e3;
+      }
+
+      .table-container {
+        overflow: auto;
+        height: 500px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+  <button id="export-pdf-btn">Export to PDF</button>
+  <button onclick="exportPDF()">导出PDF</button>
+
+
+      <h2>必修课程未修读</h2>
+<div class="row justify-content-center mt-3">
+    <div class="col-auto">
+        <h5>必修课程未修读学分总计：{{ credits_sum }}</h5>
+    </div>
+</div>
+    <div class="table-container">
+      {{ tables[2] | safe }}
+    </div>
+      <h2>选修课程未修读</h2>
+      <div class="row justify-content-center mt-3">
+    <div class="col-auto">
+        <h5>选修课程未修读学分总计：{{ credits_sum_2 }}</h5>
+    </div>
+</div>
+    <div class="table-container">
+      {{ tables[3] | safe }}
+    </div>
+      <h2>实践课程未修读</h2>
+      <div class="row justify-content-center mt-3">
+    <div class="col-auto">
+        <h5>实践课程未修读学分总计：{{ credits_sum_3 }}</h5>
+    </div>
+</div>
+    <div class="table-container">
+      {{ tables[4] | safe }}
+    </div>
+
+  <h2>培养方案没有但是已经修读的课程</h2>
+      <div class="table-container">
+       {{ tables[5] | safe }}
+     </div>
+  <h2>培养方案情况</h2>
+      <div class="table-container">
+       {{ tables[0] | safe }}
+     </div>
+    <h2>已修读课程情况</h2>
+      <div class="table-container">
+       {{ tables[1] | safe }}
+     </div>
+  </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<script>
+// 获取“导出为 PDF”按钮元素
+var exportBtn = document.getElementById("export-pdf-btn");
+// 添加单击事件处理程序
+exportBtn.addEventListener("click", function() {
+  // 将整个页面转换为 PDF
+  html2pdf().from(document.body).save();
+});
+</script>
+
+</html>
