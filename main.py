@@ -11,7 +11,7 @@ class ExcelProcessor:
     try:
         def __init__(self, master):
             self.master = master
-            self.master.title("香涛专业培养方案完成情况分析")
+            self.master.title("培养方案完成情况分析")
             self.master.geometry("500x400")
 
             # Create widgets
