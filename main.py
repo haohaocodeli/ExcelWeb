@@ -16,7 +16,7 @@ class ExcelProcessor:
 
             # Create widgets
             self.file_label1 = tk.Label(self.master, text="请上传当前学生培养方案")
-            self.file_label1.pack(pady=10)
+            self.file_label1.pack(pady=10)g
 
             self.file_button1 = tk.Button(self.master, text="培养方案上传", command=self.select_file1)
             self.file_button1.pack(pady=10)
